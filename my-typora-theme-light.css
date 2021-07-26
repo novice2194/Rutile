@@ -1,8 +1,6 @@
 :root {
-    --bg-color: #1f1f1f; /*typora设置的列表色*/
-    --text-color: #f5f5f5; /*typora设置的文字色*/
-    --side-bar-bg-color: #141414; /*侧边栏背景色*/
-    --control-text-color: #f0f0f0; /*侧边栏文字色*/
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
     --select-text-bg-color: #ffafa3;
     --active-file-text-color: #262626;
     --active-file-border-color: #f22f27;
@@ -45,8 +43,8 @@ body {
     letter-spacing: 0;
     margin: 0;
     overflow-x: hidden;
-    color: var(--mid-7);
-    background-color: var(--mid-11);
+    color: var(--mid-10); /*文字颜色*/
+    background-color: var(--mid-1); /*背景色*/
 }
 
 #write {
@@ -122,7 +120,7 @@ h1 {
     font-size: 2.25em;
     line-height: 1.2;
     /*border-bottom: 1px solid #32b16c; /*或aaaaaa*/
-    color: var(--mid-1);
+    color: var(--mid-12);
     padding-left: 9px;
     border-left: 9px solid var(--main-9);
 }
@@ -130,7 +128,7 @@ h1 {
 h2 {
     font-size: 1.75em;
     line-height: 1.225;
-    color: var(--mid-1);
+    color: var(--mid-12);
     padding-left: 9px;
     border-left: 7px solid var(--main-7);
 }
@@ -155,21 +153,21 @@ h2 {
 h3 {
     font-size: 1.5em;
     line-height: 1.43;
-    color: var(--mid-4);
+    color: var(--mid-12);
     padding-left: 9px;
     border-left: 5px solid var(--main-5);
 }
 
 h4 {
     font-size: 1.25em;
-    color: var(--mid-4);
+    color: var(--mid-10);
     padding-left: 9px;
     border-left: 3px solid var(--main-3);
 }
 
 h5 {
     font-size: 1em;
-    color: var(--mid-4);
+    color: var(--mid-8);
     padding-left: 9px;
     border-left: 1px solid var(--main-1);
 }
@@ -197,7 +195,7 @@ hr {
     height: 2px;
     padding: 0;
     margin: 16px 0;
-    background-color: var(--mid-7);
+    background-color: var(--mid-9);
     border: 0 none;
     overflow: hidden;
     box-sizing: content-box;
@@ -223,9 +221,9 @@ ol:last-child {
 }
 
 blockquote {
-    border-left: 4px solid var(--mid-8);
+    border-left: 4px solid var(--mid-7);
     padding: 0 15px;
-    color: #777777;
+    color: var(--mid-11);
 }
 
 blockquote blockquote {
@@ -243,9 +241,10 @@ table tr {
     padding: 0;
 }
 
+/*表格样式*/
 table tr:nth-child(2n),
 thead {
-    background-color: var(--mid-12);
+    background-color: var(--mid-4);
 }
 
 table th {
@@ -271,9 +270,9 @@ table td:last-child {
     margin-bottom: 0;
 }
 
-/* 改变光标的颜色，在黑暗背景下能显示*/
+/* 改变光标的颜色，在背景下能显示*/
 .CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid #ffffff;
+    border-left: 3px solid #000000;
     z-index: 3;
 }
 
@@ -285,9 +284,8 @@ table td:last-child {
 .md-fences,
 code,
 tt {
-    border: 1px solid var(--mid-13);
+    border: 1px solid var(--mid-5);
     border-radius: 3px;
-    padding: 0;
     padding: 2px 4px 0px 4px;
     font-size: 0.9em;
     font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
@@ -295,7 +293,7 @@ tt {
 
 /*代码格式*/
 code {
-    background-color: var(--mid-13);
+    background-color: var(--mid-3);
     padding: 0 2px 0 2px;
 }
 
@@ -305,7 +303,7 @@ code {
     margin-top: 15px;
     padding-top: 8px;
     padding-bottom: 6px;
-    background-color: var(--mid-12);
+    background-color: var(--mid-4);
 }
 
 
@@ -432,6 +430,7 @@ header, .context-menu, .megamenu-content, footer {
 }
 
 .mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
     background-color: var(--side-bar-bg-color);
 }
 
@@ -452,121 +451,186 @@ header, .context-menu, .megamenu-content, footer {
 }
 
 .ty-preferences .window-content {
-    color: var(--mid-1); /*typora设置的文字色*/
-    background-color: var(--mid-11); /*typora设置的背景色*/
+    background-color: #fafafa;
 }
 
 .ty-preferences .nav-group-item.active {
-    color: var(--mid-1);
-    background-color: var(--mid-11);
+    color: white;
+    background: #999;
+}
+
+/*脚注标记*/
+#write .md-footnote {
+    background-color: inherit;
+    color: var(--drake-highlight);
+    font-size: 0.9rem;
+    border-radius: 0.9rem;
+    padding-left: 0;
+}
+
+#write .md-footnote:before {
+    content: "[";
+}
+
+#write .md-footnote:after {
+    content: "]";
+}
+
+/*脚注内容*/
+.md-hover-tip .code-tooltip-content {
+    border-radius: 2px;
+}
+
+/*脚注标题*/
+span.md-def-name {
+    padding-right: 3ch;
+    padding-left: 0;
+    position: relative;
+    font-weight: normal;
+}
+
+/*脚注说明*/
+.footnotes {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #304455;
+    position: relative;
+}
+
+/*脚注工具提示文本*/
+.code-tooltip-content .md-plain {
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.code-tooltip-content code {
+    padding: 0 2px;
+    font-family: inherit;
+    color: #ffd760;
+    background-color: inherit;
+}
+
+.code-tooltip-content a {
+    color: #ffd760;
+}
+
+div.code-tooltip-content {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-name:after {
+    content: ". ^";
+    color: #304455;
+}
+
+.md-def-footnote .md-def-name:before {
+    content: "";
+    color: #304455;
+    position: absolute;
+}
+
+.md-def-name:before {
+    content: "";
+    color: #304455;
+    position: absolute;
+}
+
+.CodeMirror-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.file-list-item-summary {
+    font-size: 1em;
+}
+
+.pin-outline #outline-content .outline-active strong,
+.pin-outline .outline-active {
+    font-weight: 500;
+    color: var(--drake-highlight);
+}
+
+.file-list-item.active {
+    border-left: 4px solid var(--drake-accent);
 }
 
 /** 代码块高亮 */
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-operator,
-.cm-s-inner .cm-property {
-    color: #b8bfc6;
+.cm-s-inner span.cm-number {
+    color: #4a86e8;
 }
 
-.cm-s-inner .cm-keyword {
-    color: #C88FD0;
+.cm-s-inner span.cm-atom {
+    color: #9e880d;
 }
 
-.cm-s-inner .cm-tag {
-    color: #7DF46A;
+.cm-s-inner span.cm-def {
+    color: #00f;
 }
 
-.cm-s-inner .cm-attribute {
-    color: #7575E4;
+.cm-s-inner span.cm-variable {
+    color: black;
 }
 
-.CodeMirror div.CodeMirror-cursor {
-    border-left: 1px solid #b8bfc6;
-    z-index: 3;
+.cm-s-inner span.cm-variable-2 {
+    color: #00627a;
 }
 
-.cm-s-inner .cm-string {
-    color: #D26B6B;
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type {
+    color: #00627a;
 }
 
-.cm-s-inner .cm-comment,
-.cm-s-inner.cm-comment {
-    color: #DA924A;
+.cm-s-inner span.cm-property {
+    color: black;
 }
 
-.cm-s-inner .cm-header,
-.cm-s-inner .cm-def,
-.cm-s-inner.cm-header,
-.cm-s-inner.cm-def {
-    color: #8d8df0;
+.cm-s-inner span.cm-keyword {
+    color: #708;
 }
 
-.cm-s-inner .cm-quote,
-.cm-s-inner.cm-quote {
-    color: #57ac57;
+.cm-s-inner span.cm-operator {
+    color: black;
 }
 
-.cm-s-inner .cm-hr {
-    color: #d8d5d5;
+.cm-s-inner span.cm-comment {
+    color: #787878;
 }
 
-.cm-s-inner .cm-link {
-    color: #d3d3ef;
+.cm-s-inner span.cm-string {
+    color: #008000;
 }
 
-.cm-s-inner .cm-negative {
-    color: #d95050;
+.cm-s-inner span.cm-string-2 {
+    color: #008000;
 }
 
-.cm-s-inner .cm-positive {
-    color: #50e650;
+.cm-s-inner span.cm-qualifier {
+    color: black;
 }
 
-.cm-s-inner .cm-string-2 {
-    color: #f50;
+.cm-s-inner span.cm-error {
+    color: red;
 }
 
-.cm-s-inner .cm-meta,
-.cm-s-inner .cm-qualifier {
-    color: #b7b3b3;
+.cm-s-inner span.cm-attribute {
+    color: black;
 }
 
-.cm-s-inner .cm-builtin {
-    color: #f3b3f8;
+.cm-s-inner span.cm-tag {
+    color: black;
 }
 
-.cm-s-inner .cm-bracket {
-    color: #997;
+.cm-s-inner span.cm-link {
+    color: #4a86e8;
 }
 
-.cm-s-inner .cm-atom,
-.cm-s-inner.cm-atom {
-    color: #84B6CB;
+.cm-s-inner span.cm-builtin {
+    color: black;
 }
 
-.cm-s-inner .cm-number {
-    color: #64AB8F;
-}
-
-.cm-s-inner .cm-variable {
-    color: #b8bfc6;
-}
-
-.cm-s-inner .cm-variable-2 {
-    color: #9FBAD5;
-}
-
-.cm-s-inner .cm-variable-3 {
-    color: #1cc685;
-}
-
-.CodeMirror-selectedtext,
-.CodeMirror-selected {
-    background: #4a89dc;
-    color: #fff !important;
-    text-shadow: none;
-}
-
-.CodeMirror-gutters {
-    border-right: none;
+.cm-s-inner span.cm-bracket {
+    color: black;
 }
