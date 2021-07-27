@@ -40,7 +40,7 @@ html {
 }
 
 body {
-    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+    font-family: "JetBrains Mono", 思源黑体, sans-serif !important;
     line-height: 1.8rem;
     letter-spacing: 0;
     margin: 0;
@@ -290,7 +290,7 @@ tt {
     padding: 0;
     padding: 2px 4px 0px 4px;
     font-size: 0.9em;
-    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+    font-family: "JetBrains Mono", 思源黑体, sans-serif !important;
 }
 
 /*代码格式*/
@@ -423,7 +423,7 @@ code {
 }
 
 header, .context-menu, .megamenu-content, footer {
-    font-family: "JetBrains Mono", 思源黑体, 微软雅黑, sans-serif !important;
+    font-family: "JetBrains Mono", 思源黑体, sans-serif !important;
 }
 
 .file-node-content:hover .file-node-icon,
