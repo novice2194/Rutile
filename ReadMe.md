@@ -2,7 +2,11 @@
 
 我也是服了，微信文章官方不支持设置背景，只能用亮色，麻了。
 
-链接：
+**链接：**
+
+[novice2194/Typora-Theme: Typora-Theme (github.com)](https://github.com/novice2194/Typora-Theme/tree/master)
+
+https://www.aliyundrive.com/s/wpqjtpirVhr
 
 **更新2.0**
 
