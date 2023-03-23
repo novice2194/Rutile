@@ -1,4 +1,4 @@
-# 我的Typora Theme计划
+# Rutile: Typora Theme
 
 
 **链接：**
